@@ -5,8 +5,8 @@ app = FastAPI()
 
 @app.get("/")
 def hello():
-    return {"message":"hello world"}
+    return {"message":"Patients Management System API"}
 
 @app.get("/predict")
-def hii():
-    return "Predict the value"
+def about():
+    return {"message":'A fully functional API to manage your patient records'}
