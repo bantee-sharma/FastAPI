@@ -23,9 +23,5 @@ def view():
 
 
 @app.get('/search/{patient_id}')
-def search():
+def search(patient_id: str):
     data = load_data()
-
-    if patient_id in data:
-        return data[patient_id]
-    return {'Error':'Patient not found'}
