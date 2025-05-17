@@ -29,3 +29,6 @@ def search(patient_id: str = Path(..., description="ID of the patient in the DB"
     if patient_id in data:
         return data[patient_id]
     raise HTTPException(status_code=404,detail="Patient not found")
+
+@app.get('/sort')
+def sort_patients(sort_by:str = que)
