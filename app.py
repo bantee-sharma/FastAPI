@@ -28,4 +28,4 @@ def search(patient_id: str = Path(..., description="Id of the patient in the DB"
 
     if patient_id in data:
         return data[patient_id]
-    raise HTTPException(status_code=404,detail=)
+    raise HTTPException(status_code=404,detail="")
