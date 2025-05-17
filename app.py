@@ -31,4 +31,5 @@ def search(patient_id: str = Path(..., description="ID of the patient in the DB"
     raise HTTPException(status_code=404,detail="Patient not found")
 
 @app.get('/sort')
-def sort_patients(sort_by:str = Query(...,description="sort on the basis of Hieght,weighta and bmi", order:str = Query(...)))
+def sort_patients(sort_by:str = Query(...,description="sort on the basis of Hieght,weighta and bmi"),
+                  order:str = Query("asc",description=""))
