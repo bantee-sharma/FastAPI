@@ -5,7 +5,6 @@ app = FastAPI()
 def load_data():
     with open("patients.json","rb") as f:
         data = json.load(f)
-
     return data
 
 
