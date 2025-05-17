@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Path,requests,HTTPException
+from fastapi import FastAPI, Path,requests,HTTPException,Query
 import json
 app = FastAPI()
 
