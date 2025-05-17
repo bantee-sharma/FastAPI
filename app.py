@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Path,requests
+from fastapi import FastAPI, Path,requests,HTTPException
 import json
 app = FastAPI()
 
@@ -22,8 +22,8 @@ def view():
     return data
 
 
-@app.get('/search00/{patient_id}')
-def search(patient_id: str = Path):
+@app.get('/patient/{patient_id}')
+def search(patient_id: str = Path(..., description="Id of the patient in the DB", example='P001')):
     data = load_data()
 
     if patient_id in data:
