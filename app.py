@@ -28,4 +28,4 @@ def search(patient_id: str = Path(..., description="Id of the patient in the DB"
 
     if patient_id in data:
         return data[patient_id]
-    return {"error":"patient not found"}
+    raise 
