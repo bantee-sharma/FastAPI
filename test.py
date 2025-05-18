@@ -1,6 +1,9 @@
 from fastapi import FastAPI
-
+import json
 app = FastAPI()
+
+def data_load():
+
 
 @app.get('/')
 def hello():
@@ -9,3 +12,4 @@ def hello():
 @app.get('/about')
 def about():
     return {"message":'A fully functional API to manage your patient records'}
+
