@@ -4,8 +4,8 @@ import json
 app = FastAPI()
 
 def data_load():
-    with open("patient.json",'rb') as f:
-        data = data_load()
+    with open("patients.json",'rb') as f:
+        data = data_load(f)
     return data
 
 
@@ -16,4 +16,9 @@ def hello():
 @app.get('/about')
 def about():
     return {"message":'A fully functional API to manage your patient records'}
+
+@app.get("/view")
+def view():
+    data = data_load
+    return data
 
