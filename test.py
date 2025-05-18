@@ -23,8 +23,11 @@ def view():
     return data
 
 @app.get('/patient/{patient_id}')
-def patients():
+def patients(patient:str):
     data = data_load()
-    return data
+    
+    if patient_id in data:
+        return[patient_id]
+    return {"message":"No patient Found"}
     
 
