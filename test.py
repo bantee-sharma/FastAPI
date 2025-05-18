@@ -1,8 +1,12 @@
 from fastapi import FastAPI
 import json
+
 app = FastAPI()
 
 def data_load():
+    with open("patient.json",'rb') as f:
+        data = data_load()
+    return data
 
 
 @app.get('/')
