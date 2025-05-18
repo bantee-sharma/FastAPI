@@ -27,7 +27,7 @@ def patients(patient_id:str):
     data = data_load()
     
     if patient_id in data:
-        return[patient_id]
+        return data[patient_id]
     return {"message":"No patient Found"}
     
 
