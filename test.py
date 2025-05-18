@@ -23,7 +23,7 @@ def view():
     return data
 
 @app.get('/patient/{patient_id}')
-def patients(patient:str):
+def patients(patient_id:str):
     data = data_load()
     
     if patient_id in data:
