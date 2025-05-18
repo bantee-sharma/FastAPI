@@ -5,7 +5,7 @@ app = FastAPI()
 
 def data_load():
     with open("patients.json",'rb') as f:
-        data = data_load(f)
+        data = json.load(f)
     return data
 
 
@@ -19,6 +19,6 @@ def about():
 
 @app.get("/view")
 def view():
-    data = data_load
+    data = data_load()
     return data
 
