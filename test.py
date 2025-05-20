@@ -22,8 +22,11 @@ def view():
     data = data_load()
     return data
 
+@app.get("/patient/{patient_id}")
+def patient(patient_id:str):
+    data = data_load()
 
-
-
-
+    if patient_id in data:
+        return data[patient_id]
+    raise HTTPException(status_code=404,detail="Patient not foun")
 
