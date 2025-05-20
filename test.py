@@ -31,6 +31,13 @@ def patient(patient_id:str=Path(...,description="ID of Patient in DB",example="P
     raise HTTPException(status_code=404,detail="Patient not foun")
 
 @app.get("/sort")
-def sort(sort_by:str = ):
+def sort(sort_by:str = Query(...,description="sort on the basis of height,weight and bmi"), order:str=Query("asc",description="sort in asc and desc order")):
 
+    valid_fields = ["height","weight","bmi"]
+
+    if sort_by not in valid_fields:
+        raise HTTPException(status_code=400,detail=f"Invalid Field select from {valid_fields}")
+    
+    if order not in ['asc','desc']:
+        raise HTTPException(status_code=400,detail=f"Invalid order select between asc and desc")
 
