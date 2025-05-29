@@ -3,3 +3,4 @@ pydantic
 uvicorn
 flask
 pandas
+scikit-learn
